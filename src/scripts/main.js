@@ -17,6 +17,13 @@ function getEmployees(people) {
   for (const person of people) {
     document.querySelector('ul').appendChild(person);
   }
+
+  return people.map((element) => ({
+    name: element.innerHTML,
+    position: element.dataset.position,
+    salary: element.dataset.salary,
+    age: element.dataset.age,
+  }));
 }
 
 getEmployees(sortList(list));
